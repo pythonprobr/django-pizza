@@ -64,25 +64,41 @@ Ajustes no ``settings.py``
 
 Para usar o SQLite::
 
-    DATABASE_ENGINE = 'sqlite3'
-    DATABASE_NAME = 'dados/pizza.sqlite3'
-    DATABASE_USER = ''
-    DATABASE_PASSWORD = ''
-    DATABASE_HOST = ''
-    DATABASE_PORT = ''
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': 'pizzaria.sqlite3',      # Or path to database file if using sqlite3.
+            'USER': '',                      # Not used with sqlite3.
+            'PASSWORD': '',                  # Not used with sqlite3.
+            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+            'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        }
+    }
   
 Para usar o PostgreSQL::
 
-    DATABASE_ENGINE = 'postgresql_psycopg2'
-    DATABASE_NAME = 'dados/pizza.sqlite3'
-    DATABASE_USER = 'dante'
-    DATABASE_PASSWORD = 'com3d1a'
-    DATABASE_HOST = 'db.meusite.com.br' # '' == localhost
-    DATABASE_PORT = '' # default
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': 'pizzaria',              # Or path to database file if using sqlite3.
+            'USER': 'dante',                 # Not used with sqlite3.
+            'PASSWORD': 'com3d1a',           # Not used with sqlite3.
+            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+            'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        }
+    }
 
 ----------------------------------
 Outros ajustes no ``settings.py``
 ----------------------------------
+
+::
+
+    # coding: utf-8
+
+- especificar na 1ª linha a codificação do arquivo-fonte ``settings.py``
+
+  - necessário para usar acentação, mesmo que apenas em comentários
 
 ::
 
