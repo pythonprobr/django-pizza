@@ -14,9 +14,15 @@ class Cliente(models.Model):
     
     class Meta:
         unique_together = ['fone', 'ramal']
+        verbose_name = u'Freguês'
+        verbose_name_plural = u'Fregueses'
 
     def __unicode__(self):
         return u'%s: %s' % (self.fone, self.contato)
 
-from django.contrib import admin
-admin.site.register(Cliente)
+    def endereco(self):
+        end = '%s, %s' % (self.logradouro, self.numero)
+        if self.complemento:
+            end += ', ' + self.complemento
+        return end
+    endereco.short_description = u'endereço'
