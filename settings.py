@@ -121,6 +121,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',     # <- Django Admin
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs', # <- documentação local
+    'south',
+    # projeto Pizza
+    'entrega',
 )
 
 # A sample logging configuration. The only tangible logging
