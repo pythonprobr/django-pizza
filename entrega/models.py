@@ -14,8 +14,6 @@ class Cliente(models.Model):
     
     class Meta:
         unique_together = ['fone', 'ramal']
-        verbose_name = u'Freguês'
-        verbose_name_plural = u'Fregueses'
 
     def __unicode__(self):
         return u'%s: %s' % (self.fone, self.contato)
